@@ -1,0 +1,23 @@
+{{ range $key, $value := .Site.Taxonomies }}
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+  <section class="{{ $key }}">
+    <header>
+      <h3 class="typo-styles__demo mdl-typography--headline headline__box">{{ $key | upper }}</h3>
+    </header>
+    <ul class="demo-list-icon mdl-list">
+      {{ range first 10 $value.ByCount }}
+      <li class="mdl-list__item">
+        <a class="link" href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}">
+        <span class="mdl-list__item-primary-content">
+        {{ .Name }}
+        </span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  </div>
+</div>
+{{ end }}
+</ul>

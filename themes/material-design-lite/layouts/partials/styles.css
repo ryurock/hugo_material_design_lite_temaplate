@@ -16,6 +16,7 @@
 
 body {
   margin: 0;
+  font-family: Helvetica,"ヒラギノ角ゴ Pro W3",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif
 }
 
 /* Disable ugly boxes around images in IE10 */
@@ -467,35 +468,6 @@ a img{
 
 
 
-/**
- myself css
-**/
-
-.demo-card-image.mdl-card {
-  background: url('../assets/demos/image_card.jpg') center / cover;
-}
-.demo-card-image > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.2);
-}
-.demo-card-image__filename {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-{{ range $p := .Site.Pages }}
-{{ with $p.Params.thumbnail }}
-.thumb-{{ $p.UniqueID }} {
-  background-image: url({{ $.Site.BaseURL }}{{ . }});
-}
-{{ end }}
-{{ end }}
-
-
-
-
 /**** Mobile layout ****/
 @media (max-width: 900px) {
   .navigation-container {
@@ -571,4 +543,29 @@ a img{
   .footer .mdl-mega-footer--bottom-section {
     display: none;
   }
+}
+
+
+/**
+ myself css
+**/
+
+{{ range $p := .Site.Pages }}
+{{ with $p.Params.thumbnail }}
+.thumb-{{ $p.UniqueID }} {
+  background-image: url({{ $.Site.BaseURL }}{{ . }});
+}
+{{ end }}
+{{ end }}
+
+.headline__text {
+  vertical-align: text-bottom;
+}
+
+.headline__box {
+  margin: auto;
+}
+
+.datetime__text {
+  text-align: right;
 }

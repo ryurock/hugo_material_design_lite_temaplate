@@ -1,6 +1,14 @@
 {{ define "main" }}
 <section>
   <div class="card-container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+      <section>
+      <h2 class="typo-styles__demo mdl-typography--headline headline__box">
+      <i class="material-icons">new_releases</i>
+      <span class="headline__text">新着投稿</span>
+      </h2>
+      </section>
+    </div>
 
     {{ range (.Paginate .Data.Pages).Pages }}
       <article class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
@@ -14,9 +22,16 @@
         <div class="mdl-card__supporting-text">
           <span class="mdl-typography--font-light mdl-typography--subhead">{{ .Params.Description }}</span>
         </div>
+        <div class="mdl-card__actions mdl-card--border datetime__text">
+            <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05JST" }}">{{ .Lastmod.Format ( .Site.Params.dateformat | default "2006/01/02") }}</time>
+            {{ with .Section }}<i class="fa fa-bookmark" aria-hidden="true"></i>{{ . | upper }}{{ end }}
+        </div>
       </a>
       </article>
     {{ end }}
   </div>
 </section>
+
+
+{{ partial "taxonomies.html" . }}
 {{ end }}
