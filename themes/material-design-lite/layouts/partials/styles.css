@@ -19,7 +19,7 @@ body {
   font-family: Helvetica,"ヒラギノ角ゴ Pro W3",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif
 }
 
-/* Disable ugly boxes around images in IE10 */
+/* Disable ugly boxes around /images in IE10 */
 a img{
   border: 0px;
 }
@@ -176,7 +176,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
+  background: url('/images/slide01.jpg') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -303,7 +303,7 @@ a img{
 
 .wear-section {
   position: relative;
-  background: url('images/wear.png') center top no-repeat;
+  background: url('/images/wear.png') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -374,7 +374,7 @@ a img{
   }
 
 .customized-section-image {
-  background: url('images/devices.jpg') center top no-repeat;
+  background: url('/images/devices.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
